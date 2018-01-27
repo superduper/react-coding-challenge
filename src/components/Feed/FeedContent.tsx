@@ -8,15 +8,12 @@ export const FeedContent = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
 
-    // set spacing between rect links
+    /* set spacing between rect links */
     & > div  {
-        margin-right: 15px;
         margin-bottom: 45px;
+        margin-right: 15px;
     }
 
-    & > div:nth-child(8)  {
-        margin-right: 0px;
-    }
 `;
 
 export default FeedContent;

@@ -15,22 +15,6 @@ const ContentWrapper = styled.div`
     padding: 20px 130px;
 `;
 
-export const ContentItems = styled.div`
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    // set spacing between rect links
-    & > div  {
-        margin-right: 15px;
-        margin-bottom: 45px;
-    }
-
-    & > div:nth-child(8)  {
-        margin-right: 0px;
-    }
-`;
-
 export type LayoutProps = {
     header: HeaderProps;
 };
