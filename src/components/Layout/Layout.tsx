@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Footer } from './Footer';
 import { Header, HeaderProps } from './Header';
 
-const StyledApp = styled.div`
+const StyledLayout = styled.div`
     font-family: Raleway;
     display: flex;
     min-height: 100vh;
@@ -35,14 +35,14 @@ export type LayoutProps = {
     header: HeaderProps;
 };
 
-export const AppLayout: React.SFC<LayoutProps> = (props) => {
+export const Layout: React.SFC<LayoutProps> = (props) => {
     return (
-        <StyledApp>
+        <StyledLayout>
             <Header {...props.header} />
             <ContentWrapper>
                 {props.children}
             </ContentWrapper>
             <Footer />
-        </StyledApp>
+        </StyledLayout>
     );
 };

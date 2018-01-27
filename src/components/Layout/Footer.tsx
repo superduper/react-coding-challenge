@@ -2,15 +2,15 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 class Images {
-    static AppStore = require('./assets/store/app-store.svg');
-    static GooglePlay = require('./assets/store/play-store.svg');
-    static MicrosoftStore = require('./assets/store/windows-store.svg');
-    static TwitterBlue = require('./assets/social/twitter-blue.svg');
-    static TwitterWhite = require('./assets/social/twitter-white.svg');
-    static InstagramBlue = require('./assets/social/instagram-blue.svg');
-    static InstagramWhite = require('./assets/social/instagram-white.svg');
-    static FacebookBlue = require('./assets/social/facebook-blue.svg');
-    static FacebookWhite = require('./assets/social/facebook-white.svg');
+    static AppStore = require('Assets/store/app-store.svg');
+    static GooglePlay = require('Assets/store/play-store.svg');
+    static MicrosoftStore = require('Assets/store/windows-store.svg');
+    static TwitterBlue = require('Assets/social/twitter-blue.svg');
+    static TwitterWhite = require('Assets/social/twitter-white.svg');
+    static InstagramBlue = require('Assets/social/instagram-blue.svg');
+    static InstagramWhite = require('Assets/social/instagram-white.svg');
+    static FacebookBlue = require('Assets/social/facebook-blue.svg');
+    static FacebookWhite = require('Assets/social/facebook-white.svg');
 }
 
 const StyledFooter = styled.footer`

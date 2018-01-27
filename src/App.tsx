@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { AppLayout } from './AppLayout';
-import { FeedList } from './FeedList';
-import { FeedIndex } from './FeedIndex';
-import { ProgramType } from './feed';
+import { Layout } from 'Components/Layout';
+import * as Feed from 'Components/Feed';
+import { ProgramType } from 'Services/feed';
 
 const FEED_URL = 'https://raw.githubusercontent.com/StreamCo/react-coding-challenge/master/feed/sample.json';
 
@@ -25,34 +24,45 @@ export default class App extends React.Component<{}, State> {
             title: 'Popular Titles',
         };
     }
-    render() {
+
+    renderIndex() {
+        return (
+            <Layout header={{ title: this.state.title }}>
+                <Feed.Index
+                    onProgramSelect={
+                        (programType: ProgramType) =>
+                            this.setState({
+                                programType,
+                            })
+                    }
+                />
+            </Layout>
+        );
+    }
+
+    renderFeed(programType: ProgramType) {
         const feedQueryProps = {
             feedURL: FEED_URL,
             maxItems: 21,
             minReleaseYear: 2010,
         };
-
-        // Show feed index if no program type selected
-        if (!this.state.programType) {
-            return (
-                <AppLayout header={{ title: this.state.title }}>
-                    <FeedIndex
-                        onProgramSelect={
-                            (programType: ProgramType) =>
-                                this.setState({
-                                    programType,
-                                })
-                        }
-                    />
-                </AppLayout>
-            );
-        }
-
+        const title = 'popular ' + pluralize(programType);
         // Show feed list if program type was selected
         return (
-            <AppLayout header={{ title: 'popular ' + pluralize(this.state.programType) }}>
-                <FeedList programType={this.state.programType} {...feedQueryProps} />
-            </AppLayout>
+            <Layout header={{ title }}>
+                <Feed.List programType={programType} {...feedQueryProps} />
+            </Layout>
         );
+    }
+
+    render() {
+        const { programType } = this.state;
+        // Show feed index if no program type selected
+        if (!programType) {
+            return this.renderIndex();
+        } else {
+            // Show feed list if program type was selected
+            return this.renderFeed(programType);
+        }
     }
 }

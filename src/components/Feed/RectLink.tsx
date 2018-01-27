@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 class Images {
-    static placeholder = require('./assets/placeholder.png');
+    static placeholder = require('Assets/placeholder.png');
 }
 
 export type InnerProps = {

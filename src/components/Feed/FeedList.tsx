@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { RectLink } from './RectLink';
-import { ContentItems as Wrapper } from './AppLayout';
-import * as feed from './feed';
+import { FeedContent as Wrapper } from './FeedContent';
+import * as feed from 'Services/feed';
 
 export type FeedListProps = {
     feedURL: string;
@@ -25,19 +25,16 @@ export class FeedList extends React.Component<FeedListProps, State> {
     async fetchItems() {
         try {
             const items = await feed.fetch(this.props.feedURL, this.props);
-
             // Pass data to the state
             this.setState({
                 items,
             });
-
         } catch (error) {
             // Save error to the state
             this.setState({
                 error,
             });
         }
-
     }
 
     render() {

@@ -1,7 +1,7 @@
 import * as React from 'react';
+import { ProgramType } from 'Services/feed';
+import { FeedContent as Wrapper } from './FeedContent';
 import { RectLink } from './RectLink';
-import { ContentItems as Wrapper } from './AppLayout';
-import { ProgramType } from './feed';
 
 export type FeedIndexProps = {
     onProgramSelect: (programType: ProgramType) => any;
