@@ -13,6 +13,12 @@ const StyledLayout = styled.div`
 const ContentWrapper = styled.div`
     flex: 1;
     padding: 20px 130px;
+    @media (max-width: 680px) {
+      padding: 20px;
+    }
+    @media (max-width: 420px) {
+      padding: 10px;
+    }
 `;
 
 export type LayoutProps = {

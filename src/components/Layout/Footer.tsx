@@ -15,7 +15,7 @@ class Images {
 
 const StyledFooter = styled.footer`
 
-    @media (max-width: 420px) {
+    @media (max-width: 440px) {
         padding: 20px 20px;
     }
     padding: 20px 130px;
@@ -32,7 +32,7 @@ const Copyright = styled.div`
 `;
 
 const BottomAppMarket = styled.div`
-    @media (max-width: 420px) {
+    @media (max-width: 440px) {
          display: flex;
          flex-direction: column;
          justify-content: center;
@@ -43,7 +43,7 @@ const BottomAppMarket = styled.div`
         height: 40px;
         margin-left: 20px;
 
-        @media (max-width: 420px) {
+        @media (max-width: 440px) {
              margin-top: 35px;
              margin-left: 0;
         }
@@ -56,7 +56,7 @@ const BottomAppMarket = styled.div`
 
 const BottomImgLinks = styled.div`
    display: flex;
-   @media (max-width: 420px) {
+   @media (max-width: 440px) {
         flex-direction: column;
    }
    flex-direction: row;
@@ -68,7 +68,7 @@ const BottomImgLinks = styled.div`
 const BottomSocial = styled.div`
     display: flex;
     flex-direction: row;
-    @media (max-width: 420px) {
+    @media (max-width: 440px) {
          justify-content: center;
     }
 

@@ -6,8 +6,7 @@ import { ProgramType } from 'Services/feed';
 const FEED_URL = 'https://raw.githubusercontent.com/StreamCo/react-coding-challenge/master/feed/sample.json';
 
 type State = {
-    title: string;
-    programType?: ProgramType;
+    programType: ProgramType | null;
 };
 
 function pluralize(word: string) {
@@ -21,13 +20,21 @@ export default class App extends React.Component<{}, State> {
     constructor(props: {}) {
         super(props);
         this.state = {
-            title: 'Popular Titles',
+            programType: null,
         };
     }
 
+    resetState() {
+        this.setState({ programType: null });
+    }
     renderIndex() {
         return (
-            <Layout header={{ title: this.state.title }}>
+            <Layout
+                header={{
+                    title: 'Popular Titles',
+                    onAppTitleClick: () => this.resetState(),
+                }}
+            >
                 <Feed.Index
                     onProgramSelect={
                         (programType: ProgramType) =>
@@ -49,7 +56,12 @@ export default class App extends React.Component<{}, State> {
         const title = 'popular ' + pluralize(programType);
         // Show feed list if program type was selected
         return (
-            <Layout header={{ title }}>
+            <Layout
+                header={{
+                    title,
+                    onAppTitleClick: () => this.resetState(),
+                }}
+            >
                 <Feed.List programType={programType} {...feedQueryProps} />
             </Layout>
         );

@@ -14,6 +14,15 @@ export const FeedContent = styled.div`
         margin-right: 15px;
     }
 
+    @media (max-width: 440px) {
+        justify-content: space-between;
+        & > div:nth-child(odd)  {
+            margin-right: 15px;
+        }
+        & > div:nth-child(even)  {
+            margin-right: 0px;
+        }
+    }
 `;
 
 export default FeedContent;

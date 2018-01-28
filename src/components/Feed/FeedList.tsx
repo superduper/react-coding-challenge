@@ -48,8 +48,9 @@ export class FeedList extends React.Component<FeedListProps, State> {
 
         return (
             <Wrapper>
-                {this.state.items.map(item => (
+                {this.state.items.map((item, index) => (
                     <RectLink
+                        key={`feedItem${index}`}
                         thumbnail={item.thumbnail}
                         subtitle={item.title}
                     />
