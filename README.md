@@ -55,6 +55,7 @@ Selected components:
 - Add implement stateless components with `react-redux`
 - Use styled theme provider to keep shared CSS constant values in one place
 - Move components to namespaced folders
+- Better responsiveness support with proper CSS grid framework
 
 
 
